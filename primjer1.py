@@ -10,6 +10,7 @@ import WCut
 # tocke unutar klastera imaju bridove tezine izmedu [0, 1>, dok tocke izvan
 # klastera imaju tezine izmedu [0, 0.1> za sum
 
+
 def generiraj_1():
     velicine_klastera = [75, 130, 150, 70, 75]
     A = np.zeros((500, 500))
@@ -31,13 +32,13 @@ def generiraj_1():
                 A[j, i] = random.random()
 
             else:
-                A[i, j] = random.random() / 10
-                A[j, i] = random.random() / 10
+                A[i, j] = random.random() / float(1.414213562)
+                A[j, i] = random.random() / float(1.414213562)
     return A
 
-#A=generiraj_1()
-#plt.matshow(A)
-#plt.colorbar()
-#plt.show()
+# A=generiraj_1()
+# plt.matshow(A)
+# plt.colorbar()
+# plt.show()
 # uzvuzgaj masinu
-#WCut.WCut(A, WCut.stvoriD(A), 5)
+# WCut.WCut(A, WCut.stvoriD(A), 5)
