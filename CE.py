@@ -52,10 +52,7 @@ def Hungarian(C1, C2):
                             nij += 1
                     suma += nij
             hungmatrix[i][j] = suma
-    print(hungmatrix)
     row_ind, col_ind = linear_sum_assignment(hungmatrix)
-    print(row_ind)
-    print(col_ind)
     dictionary = dict(zip(row_ind, col_ind))
     new_renumber = []
     for cluster_number in C1:
