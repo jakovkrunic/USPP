@@ -5,7 +5,7 @@ import WCut
 from math import sqrt 
 # 400 tocaka u ravnini, grupirane oko (0.01, 0), (-0.01, 0), (0, 0.01) i (0, -0.01)
 
-points = np.random.random((400, 2)) / 100
+points = np.random.random((400, 2)) / 200
 
 for i in range(0, 100):
     points[i][0] = points[i][0] + 0.005
