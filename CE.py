@@ -4,6 +4,7 @@ from numpy import linalg as la
 from scipy.linalg import fractional_matrix_power
 from sklearn.cluster import KMeans
 from itertools import *
+from scipy.optimize import linear_sum_assignment
 import math
 
 
@@ -34,6 +35,32 @@ def All_renumberings(C1, C2):
         if(min > candidate):
             min = candidate
     return min
+
+
+def Hungarian(C1, C2):
+    n = len(C1)
+    k = max(C1)+1
+    hungmatrix = np.full((k, k), 0)
+    for i in range(k):
+        for j in range(k):
+            suma = 0
+            for ktrue in range(k):
+                if(j != ktrue):
+                    nij = 0
+                    for l in range(n):
+                        if(C1[l] == i and C2[l] == ktrue):
+                            nij += 1
+                    suma += nij
+            hungmatrix[i][j] = suma
+    print(hungmatrix)
+    row_ind, col_ind = linear_sum_assignment(hungmatrix)
+    print(row_ind)
+    print(col_ind)
+    dictionary = dict(zip(row_ind, col_ind))
+    new_renumber = []
+    for cluster_number in C1:
+        new_renumber.append(dictionary[cluster_number])
+    return CE(new_renumber, C2)
 
 # print(CE([1,1,0,2,2],[2,0,0,1,1]))
 # print(CE([1,1,0,2,2],[2,2,1,0,0]))
