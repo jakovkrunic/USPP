@@ -31,9 +31,12 @@ def generiraj_1():
                 A[i, j] = random.random()
                 A[j, i] = random.random()
 
+            elif (random.random() >= 0.5):
+                A[i, j] = random.random()
+                A[j, i] = random.random()
             else:
-                A[i, j] = random.random() / float(1.414213562)
-                A[j, i] = random.random() / float(1.414213562)
+                A[i, j] = random.random() / 2
+                A[j, i] = random.random() / 2
     return A
 
 # A=generiraj_1()

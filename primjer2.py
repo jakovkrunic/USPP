@@ -8,7 +8,7 @@ from math import sqrt
 
 
 def generiraj_2():
-    points = np.random.random((400, 2)) / 200
+    points = np.random.random((400, 2)) / 100
 
     for i in range(0, 100):
         points[i][0] = points[i][0] + 0.005
