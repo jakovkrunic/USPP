@@ -36,10 +36,10 @@ def All_renumberings(C1,C2):
             min=candidate
     return min
 
-print(CE([1,1,0,2,2],[2,0,0,1,1]))
-print(CE([1,1,0,2,2],[2,2,1,0,0]))
-print(CE([0,1,0],[0,1,0]))
+#print(CE([1,1,0,2,2],[2,0,0,1,1]))
+#print(CE([1,1,0,2,2],[2,2,1,0,0]))
+#print(CE([0,1,0],[0,1,0]))
 
-print (All_renumberings([1,1,0,2,2],[2,0,0,1,1]))
-print (All_renumberings([1,1,0,2,2],[2,2,1,0,0]))
-print (All_renumberings([0,1,0],[0,1,0]))
+#print (All_renumberings([1,1,0,2,2],[2,0,0,1,1]))
+#print (All_renumberings([1,1,0,2,2],[2,2,1,0,0]))
+#print (All_renumberings([0,1,0],[0,1,0]))

@@ -16,7 +16,7 @@ def stvoriD(A):
         suma = 0
         for j in range(A.shape[0]):
             suma += A[i,j]
-        x[i] = suma  
+        x[i] = suma
     return np.diag(x)
 
 #3. korak
@@ -39,7 +39,7 @@ def klasteriraj(T,Y,k):
     t=fractional_matrix_power(T, -0.5)
     X = np.matmul(t,Y)
     kmeans = KMeans(n_clusters=k, random_state=0).fit(X)
-    print(kmeans.labels_) #isprinta vektor npr. [0,1,0]
+    return kmeans.labels_ #isprinta vektor npr. [0,1,0]
                           #prva i treca tocka pripadaju klasteru C0
                           #druga tocka pripada klasteru C1
 
@@ -47,18 +47,8 @@ def WCut(A,T,k):
     D = stvoriD(A)
     HB = stvoriHB(A,T,D)
     Y = stvoriY(HB,k)
-    klasteriraj(T,Y,k)
-    
-
-A = np.array([[2, 4, 6], [8, 10, 12], [14, 16, 18]])
-WCut(A,stvoriD(A),2) #ovdje stavljam da je T = D
+    return klasteriraj(T,Y,k)
 
 
-
-
-
-
-
-
-
-
+#A = np.array([[2, 4, 6], [8, 10, 12], [14, 16, 18]])
+#WCut(A,stvoriD(A),2) #ovdje stavljam da je T = D
