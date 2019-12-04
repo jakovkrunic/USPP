@@ -36,3 +36,5 @@ for i in range(0, 500):
 plt.matshow(A)
 plt.colorbar()
 plt.show()
+# uzvuzgaj masinu
+WCut.WCut(A, WCut.stvoriD(A), 5)
