@@ -8,22 +8,22 @@ import numpy as np
 
 def analyze_example(A, k, Cprime):
     vect = []
-    vect.append(CE.All_renumberings(algvars.WNCut(A, k), Cprime))
+    vect.append(CE.Hungarian(algvars.WNCut(A, k), Cprime))
     vect.append(VI.VI(algvars.WNCut(A, k), Cprime))
 
-    vect.append(CE.All_renumberings(algvars.WACut(A, k), Cprime))
+    vect.append(CE.Hungarian(algvars.WACut(A, k), Cprime))
     vect.append(VI.VI(algvars.WACut(A, k), Cprime))
 
-    vect.append(CE.All_renumberings(algvars.WNCutAplusAt(A, k), Cprime))
+    vect.append(CE.Hungarian(algvars.WNCutAplusAt(A, k), Cprime))
     vect.append(VI.VI(algvars.WNCutAplusAt(A, k), Cprime))
 
-    vect.append(CE.All_renumberings(algvars.WACutAplusAt(A, k), Cprime))
+    vect.append(CE.Hungarian(algvars.WACutAplusAt(A, k), Cprime))
     vect.append(VI.VI(algvars.WACutAplusAt(A, k), Cprime))
 
-    vect.append(CE.All_renumberings(algvars.WNCutAAt(A, k), Cprime))
+    vect.append(CE.Hungarian(algvars.WNCutAAt(A, k), Cprime))
     vect.append(VI.VI(algvars.WNCutAAt(A, k), Cprime))
 
-    vect.append(CE.All_renumberings(algvars.WACutAAt(A, k), Cprime))
+    vect.append(CE.Hungarian(algvars.WACutAAt(A, k), Cprime))
     vect.append(VI.VI(algvars.WACutAAt(A, k), Cprime))
 
     return vect
@@ -38,11 +38,11 @@ if __name__ == "__main__":
 #    for i in range(12):
 #        print(np.mean(vect1[:, i]))
 #        print(np.var(vect1[:, i]))
-    vect2 = np.zeros((20,12))
+    vect2 = np.zeros((20, 12))
     for i in range(20):
         # 100,100,100,100
-        Cprime=np.zeros(400)+np.pad(np.ones(100),(300,0))+np.pad(np.ones(200),(200,0))+np.pad(np.ones(300),(100,0))
-        vect2[i]+=analyze_example(primjer2.generiraj_2(),4,Cprime)
+        Cprime = np.zeros(400) + np.pad(np.ones(100), (300, 0)) + np.pad(np.ones(200), (200, 0)) + np.pad(np.ones(300), (100, 0))
+        vect2[i] += analyze_example(primjer2.generiraj_2(), 4, Cprime)
     for i in range(12):
-        print ( np.mean(vect2[:,i]) )
-        print ( np.var(vect2[:,i])  )
+        print(np.mean(vect2[:, i]))
+        print(np.var(vect2[:, i]))
