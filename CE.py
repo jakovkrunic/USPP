@@ -59,10 +59,12 @@ def Hungarian(C1, C2):
         new_renumber.append(dictionary[cluster_number])
     return CE(new_renumber, C2)
 
-# print(CE([1,1,0,2,2],[2,0,0,1,1]))
-# print(CE([1,1,0,2,2],[2,2,1,0,0]))
-# print(CE([0,1,0],[0,1,0]))
 
-# print (All_renumberings([1,1,0,2,2],[2,0,0,1,1]))
-# print (All_renumberings([1,1,0,2,2],[2,2,1,0,0]))
-# print (All_renumberings([0,1,0],[0,1,0]))
+if __name__ == "__main__":
+    print(CE([1, 1, 0, 2, 2], [2, 0, 0, 1, 1]))
+    print(CE([1, 1, 0, 2, 2], [2, 2, 1, 0, 0]))
+    print(CE([0, 1, 0], [0, 1, 0]))
+
+    print(All_renumberings([1, 1, 0, 2, 2], [2, 0, 0, 1, 1]))
+    print(All_renumberings([1, 1, 0, 2, 2], [2, 2, 1, 0, 0]))
+    print(All_renumberings([0, 1, 0], [0, 1, 0]))

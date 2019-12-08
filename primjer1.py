@@ -39,9 +39,11 @@ def generiraj_1():
                 A[j, i] = random.random() / 2
     return A
 
-# A=generiraj_1()
-# plt.matshow(A)
-# plt.colorbar()
-# plt.show()
-# uzvuzgaj masinu
-# WCut.WCut(A, WCut.stvoriD(A), 5)
+
+if __name__ == "__main__":
+    A = generiraj_1()
+    plt.matshow(A)
+    plt.colorbar()
+    plt.show()
+    # uzvuzgaj masinu
+    print(WCut.WCut(A, WCut.stvoriD(A), 5))

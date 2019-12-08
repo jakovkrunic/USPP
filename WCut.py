@@ -55,5 +55,6 @@ def WCut(A, T, k):
     return klasteriraj(T, Y, k)
 
 
-# A = np.array([[2, 4, 6], [8, 10, 12], [14, 16, 18]])
-# WCut(A,stvoriD(A),2) #ovdje stavljam da je T = D
+if __name__ == "__main__":
+    A = np.array([[2, 4, 6], [8, 10, 12], [14, 16, 18]])
+    print(WCut(A, stvoriD(A), 2))  # ovdje stavljam da je T = D

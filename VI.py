@@ -10,7 +10,6 @@ def Entropija(C):
     n = len(C)
     k = max(C.astype(int))+1
     suma = 0
-    # Dacho nekaj peha
     unique, counts = np.unique(C, return_counts=True)
     dictC1 = dict(zip(unique, counts))
     for i in range(k):
@@ -23,7 +22,6 @@ def Entropija(C):
 def Info(C1, C2):
     n = len(C1)     # broj tocaka oba klasteriranja mora biti isti
     k = max(C1.astype(int))+1  # broj klastera oba klasteriranja mora biti isti
-    # Dacho nekaj peha
     unique, counts = np.unique(C1, return_counts=True)
     dictC1 = dict(zip(unique, counts))
     unique, counts = np.unique(C2, return_counts=True)
@@ -51,7 +49,5 @@ def VI(C1, C2):
     return Entropija(C1)+Entropija(C2)-2*Info(C1, C2)
 
 
-# print(VI([1,1,0,2,2],[2,0,0,1,1]))
-# print (np.zeros(500)+np.pad(np.ones(75),(425,0))+np.pad(np.ones(145),(355,0))
-# +np.pad(np.ones(295),(205,0))+np.pad(np.ones(425),(75,0)))
-# print (np.pad(np.ones(75),(1,0) ) )
+if __name__ == "__main__":
+    print(VI(np.array([1, 1, 0, 2, 2]), np.array([2, 0, 0, 1, 1])))

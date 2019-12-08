@@ -2,6 +2,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from matplotlib import interactive
 
+
 class CustomGraph:
     def __init__(self, _n, _weights=[], _random=True):
         if (_random is True):
@@ -10,6 +11,7 @@ class CustomGraph:
             self.konstruktor_zadano(_n, _weights)
     # Konstruktor za random graf --- ima bridove netrivijalne
     # tezine: (i, j), za i < j.
+
     def konstruktor_random(self, _n):
         self.weights = []
         self.n = _n
@@ -47,16 +49,19 @@ class CustomGraph:
 
         nx.draw_networkx_nodes(G_rend, pos, node_size=500)
 
-        vert_labels = {i-1:i for i in range(1, self.n + 1)}
+        vert_labels = {i-1: i for i in range(1, self.n + 1)}
 
         nx.draw_networkx_labels(G_rend, pos, vert_labels, font_size=16)
 
         nx.draw_networkx_edges(G_rend, pos, edgelist=edges, edge_color='black')
 
-        nx.draw_networkx_edge_labels(G_rend, pos, edge_labels, font_color='black')
+        nx.draw_networkx_edge_labels(G_rend,
+                                     pos,
+                                     edge_labels,
+                                     font_color='black')
 
-interactive(True)
-G = CustomGraph(3, [[0, 1, 2], [1, 0, 0], [0, 0, 0]], _random=False)
-G.skiciraj()
 
-                    
+if __name__ == "__main__":
+    interactive(True)
+    G = CustomGraph(3, [[0, 1, 2], [1, 0, 0], [0, 0, 0]], _random=False)
+    G.skiciraj()
